@@ -9,11 +9,11 @@ public class Square extends Rectangle{
         this.height = height;
     }
     @Override
-    double getArea() {
+    public double getArea() {
         return width * height;
     }
     @Override
-    void draw() {
+    public void draw() {
         System.out.println("Square, color: " + color + ", width: " + width + ", height: " + height + "area: " + getArea() + "");
     }
 

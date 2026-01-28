@@ -1,21 +1,14 @@
 package core.basesyntax;
 
-public class Square extends Rectangle{
-    double width, height;
+public class Square extends Rectangle {
+    public Square(String color, double side) {
+        super(color, side, side);
+    }
 
-    public Square(String color, double width) {
-        super(color, width);
-        this.width = width;
-        this.height = height;
-    }
-    @Override
-    public double getArea() {
-        return width * height;
-    }
     @Override
     public void draw() {
-        System.out.println("Square, color: " + color + ", width: " + width + ", height: " + height + "area: " + getArea() + "");
+        System.out.println("Figure: square, color: " + color
+                + ", side: " + width
+                + ", area: " + getArea());
     }
-
-
 }

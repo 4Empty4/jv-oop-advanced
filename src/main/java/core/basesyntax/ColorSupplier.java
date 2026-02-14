@@ -10,9 +10,6 @@ public class ColorSupplier {
 
     private final Random random = new Random();
 
-    /**
-     * Повертає випадковий колір як String.
-     */
     public String getRandomColor() {
         return COLORS[random.nextInt(COLORS.length)];
     }

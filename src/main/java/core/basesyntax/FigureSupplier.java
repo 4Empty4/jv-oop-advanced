@@ -3,28 +3,38 @@ package core.basesyntax;
 import java.util.Random;
 
 public class FigureSupplier {
+    public static final int FIGURE_COUNT = 5;
     private final ColorSupplier colorSupplier = new ColorSupplier();
     private final Random random = new Random();
 
     public Figure getRandomFigure() {
         String color = colorSupplier.getRandomColor();
-        int type = random.nextInt(5);
+        int type = random.nextInt(FIGURE_COUNT);
         switch (type) {
-            case 0:
-                return new Circle(color, rndDouble(1.0, 100.0));
-            case 1:
-                return new Square(color, rndDouble(1.0, 100.0));
-            case 2:
-                return new Rectangle(color, rndDouble(1.0, 100.0), rndDouble(1.0, 100.0));
-            case 3:
-                return new RightTriangle(color, rndDouble(1.0, 100.0), rndDouble(1.0, 100.0));
-            case 4:
-                return new IsoscelesTrapezoid(
-                        color,
-                        rndDouble(1.0, 100.0),
-                        rndDouble(1.0, 100.0),
-                        rndDouble(1.0, 100.0)
-                );
+            case 0: {
+                double radius = rndDouble(1.0, 100.0);
+                return new Circle(color, radius);
+            }
+            case 1: {
+                double side = rndDouble(1.0, 100.0);
+                return new Square(color, side);
+            }
+            case 2: {
+                double width = rndDouble(1.0, 100.0);
+                double height = rndDouble(1.0, 100.0);
+                return new Rectangle(color, width, height);
+            }
+            case 3: {
+                double firstLeg = rndDouble(1.0, 100.0);
+                double secondLeg = rndDouble(1.0, 100.0);
+                return new RightTriangle(color, firstLeg, secondLeg);
+            }
+            case 4: {
+                double base1 = rndDouble(1.0, 100.0);
+                double base2 = rndDouble(1.0, 100.0);
+                double height = rndDouble(1.0, 100.0);
+                return new IsoscelesTrapezoid(color, base1, base2, height);
+            }
             default:
                 return getDefaultFigure();
         }

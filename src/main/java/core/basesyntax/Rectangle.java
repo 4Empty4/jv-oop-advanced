@@ -1,8 +1,8 @@
 package core.basesyntax;
 
 public class Rectangle extends Figure {
-    protected double width;
-    protected double height;
+    private double width;
+    private double height;
 
     public Rectangle(String color, double width, double height) {
         super(color);
@@ -17,9 +17,16 @@ public class Rectangle extends Figure {
 
     @Override
     public void draw() {
-        System.out.println("Figure: rectangle, color: " + color
-                + ", width: " + width
-                + ", height: " + height
-                + ", area: " + getArea());
+        System.out.println("Figure: rectangle, area: " + getArea()
+                + " sq. units, width: " + width + " units, height: " + height
+                + " units, color: " + getColor());
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public double getHeight() {
+        return height;
     }
 }

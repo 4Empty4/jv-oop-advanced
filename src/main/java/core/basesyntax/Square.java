@@ -8,7 +8,8 @@ public class Square extends Rectangle {
     @Override
     public void draw() {
         System.out.println("Figure: square, color: " + color
-                + ", side: " + width
+                + ", side: " + getWidth()
                 + ", area: " + getArea());
     }
 }
+

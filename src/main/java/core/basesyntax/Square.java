@@ -12,4 +12,3 @@ public class Square extends Rectangle {
                 + ", area: " + getArea());
     }
 }
-
